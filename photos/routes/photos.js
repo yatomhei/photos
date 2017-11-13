@@ -65,7 +65,8 @@ exports.submit = function(req, res, next) {
     // Photo is the MongoDB instance
     Photo.create({
       name: name,
-      path: img.filename
+      path: img.filename,
+      timestamp: Date.now()
     }, function(err) {
       if (err) return next(err);
       res.redirect('/');

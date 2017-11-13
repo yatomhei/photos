@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title><%= title %></title>
+    <title>
+      <%= title %>
+    </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
   <body>
     <h1>Photos</h1>
     <p>Express stock photo application.</p>
     <a href="/upload">Upload photo</a>
     <div id="photos">
       <% photos.forEach(function(photo) { %>
-      <div class="photo">
-        <h2><%=photo.name%></h2>
-        <a href='/photo/<%=photo.id%>/download'>
+        <div class="photo">
+          <h2><%=photo.name%></h2>
+          <h4><%=photo.timestamp%></h4>
+          <a href='/photo/<%=photo.id%>/download'>
           <img src='/photos/<%=photo.path%>'/>
         </a>
-      </div>
-      <% }) %>
+        </div>
+        <% }) %>
     </div>
   </body>
+
 </html>
